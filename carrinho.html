@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="estilo.css">
+    <title>SENAI APM - Carrinho</title>
+</head>
+
+<body>
+    <nav id="navBarra" class="p-2 navbar barra fixed-top">
+        <div class="container-fluid barraNavegacao" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            <a href="index.html" class="navbar-brand" id="logoSenai"><img src="imagens/senaiBranco.png"
+                    alt="Logo do senai" width="140px"></a>
+
+            <div id="divLinks" class="navbar-item">
+
+                <div id="linksNavbar">
+                    <a href="index.html">Home</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="contato.html">Contato</a>
+                    <a href="sobreNos.html">Sobre Nós</a>
+                </div>
+
+            </div>
+
+            <div style="display: flex;" class="navbar-item" id="divBarraPesquisa">
+                <form style="margin-right: 20px;">
+                    <div style="display:flex; justify-content: center; padding:auto;">
+                        <input type="search" name="pesquisa" placeholder="O que você procura?" id="barraPesquisa">
+                        <button id="iconeBarraPesquisa">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="padding: auto;" width="25px" fill="#b7b7b7"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+
+            </div>
+            <div id="iconesNavbar">
+
+                <a href="conta.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-person icones" viewBox="0 0 16 16">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                    </svg>
+                </a>
+
+                <a href="carrinho.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-cart icones" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </a>
+
+                <button id="menuHamburguer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <img src="imagens/senai.jpg" alt="Logo senai" style="width: 140px;">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <form style="margin-right: 20px;" id="barraPesquisaMenu">
+            <div style="display:flex; justify-content: center; padding:auto;">
+                <input type="search" name="pesquisa" placeholder="O que você procura?" id="">
+                <button id="iconeBarraPesquisa">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding: auto;" width="25px" fill="#b7b7b7"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobreNos.html">Sobre Nós</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!--Fim menu hamburguer-->
+
+    <footer id="rodape">
+        <img src="imagens/senaiBranco.png" alt="Logo senai">
+        <div id="divLinksRodape">
+            <a href="index.html">Home</a> <br>
+            <a href="contato.html">Contato</a> <br>
+            <a href="sobreNos.html">Sobre Nós</a> <br>
+            <a href="">Como comprar?</a> <br>
+        </div>
+        <div>
+            &copy; <span>Todos os direitos foram reservados</span>
+        </div>
+
+    </footer>
+
+    <h1>Produtos</h1>
+    <a href="index.html">VOLTAR</a>
+</body>
+
+</html>
